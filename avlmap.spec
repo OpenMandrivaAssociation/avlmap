@@ -1,10 +1,11 @@
 %define	major 0
-%define libname	%mklibname avlmap %{major}
+%define libname %mklibname avlmap %{major}
+%define develname %mklibname avlmap -d
 
 Summary:	AVLMAP - Binary tree and mapping library
 Name:		avlmap
 Version:	0.12.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		System/Libraries
 License:	LGPL
 URL:		http://avlmap.slashusr.org/
@@ -26,14 +27,17 @@ The avlmap library implements a data mapping abstraction in
 function calls, along with an underlying AVL balanced binary
 search tree implementation. 
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Development library and header files for the %{name} library
 Group:		Development/Other
 Requires:	%{libname} = %{version}-%{release}
-Provides:	%{name}-devel lib%{name}-devel
-Obsoletes:	%{name}-devel lib%{name}-devel
+Provides:	%{name}-devel = %{version}-%{release}
+Provides:	lib%{name}-devel = %{version}-%{release}
+Obsoletes:	%{name}-devel
+Obsoletes:	lib%{name}-devel
+Obsoletes:	%{mklibname avlmap 0 -d}
 
-%description -n %{libname}-devel
+%description -n %{develname}
 The avlmap library implements a data mapping abstraction in
 function calls, along with an underlying AVL balanced binary
 search tree implementation. 
@@ -111,7 +115,7 @@ install -m0755 build/lib/libavlmap.a.%{version} %{buildroot}%{_libdir}/libavlmap
 %doc ChangeLog README
 %attr(0755,root,root) %{_libdir}/lib*.so.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc map/doc/*
 %attr(0755,root,root) %{_libdir}/lib*.so
@@ -121,5 +125,3 @@ install -m0755 build/lib/libavlmap.a.%{version} %{buildroot}%{_libdir}/libavlmap
 %files -n %{name}-utils
 %defattr(-,root,root)
 %attr(0755,root,root) %{_bindir}/*
-
-
