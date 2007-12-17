@@ -11,7 +11,6 @@ License:	LGPL
 URL:		http://avlmap.slashusr.org/
 Source0:	http://avlmap.slashusr.org/download/avlmap-%{version}.tar.bz2
 Provides:	libavlmap
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The avlmap library implements a data mapping abstraction in
