@@ -5,7 +5,7 @@
 Summary:	AVLMAP - Binary tree and mapping library
 Name:		avlmap
 Version:	0.12.2
-Release:	%mkrel 7
+Release:	%mkrel 8
 Group:		System/Libraries
 License:	LGPL
 URL:		http://avlmap.slashusr.org/
