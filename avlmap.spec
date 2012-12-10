@@ -5,7 +5,7 @@
 Summary:	AVLMAP - Binary tree and mapping library
 Name:		avlmap
 Version:	0.12.2
-Release:	%mkrel 8
+Release:	%mkrel 6
 Group:		System/Libraries
 License:	LGPL
 URL:		http://avlmap.slashusr.org/
@@ -127,3 +127,48 @@ install -m0755 build/lib/libavlmap.a.%{version} %{buildroot}%{_libdir}/libavlmap
 %files -n %{name}-utils
 %defattr(-,root,root)
 %attr(0755,root,root) %{_bindir}/*
+
+
+%changelog
+* Thu Jun 19 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.12.2-6mdv2009.0
++ Revision: 226208
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Fri Dec 14 2007 Thierry Vignaud <tvignaud@mandriva.com> 0.12.2-5mdv2008.1
++ Revision: 119829
+- rebuild b/c of missing package on ia32
+
+* Sun Sep 09 2007 Oden Eriksson <oeriksson@mandriva.com> 0.12.2-4mdv2008.0
++ Revision: 83710
+- fix deps
+
+* Sun Sep 09 2007 Oden Eriksson <oeriksson@mandriva.com> 0.12.2-3mdv2008.0
++ Revision: 83527
+- new devel naming
+
+
+* Fri Jan 12 2007 Andreas Hasenack <andreas@mandriva.com> 0.12.2-2mdv2007.0
++ Revision: 108070
+- added missing include files, fix its directory
+
+* Fri Dec 22 2006 Oden Eriksson <oeriksson@mandriva.com> 0.12.2-1mdv2007.1
++ Revision: 101578
+- Import avlmap
+
+* Sun Dec 25 2005 Oden Eriksson <oeriksson@mandriva.com> 0.12.2-1mdk
+- 0.12.2
+- drop upstream patches; P0
+
+* Sat Oct 16 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 0.10.2-5mdk
+- fix deps
+
+* Sat Oct 16 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 0.10.2-4mdk
+- rpmbuildupdated
+
