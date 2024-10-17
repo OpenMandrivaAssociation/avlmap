@@ -8,7 +8,7 @@ Version:	0.12.2
 Release:	%mkrel 6
 Group:		System/Libraries
 License:	LGPL
-URL:		http://avlmap.slashusr.org/
+URL:		https://avlmap.slashusr.org/
 Source0:	http://avlmap.slashusr.org/download/avlmap-%{version}.tar.bz2
 Provides:	libavlmap
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
